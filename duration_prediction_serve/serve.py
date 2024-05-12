@@ -18,12 +18,12 @@ def prepare_features(ride):
 
 app = Flask('duration-prediction')
 
-def predict(trip):
-    prediction = model.predict(trip)
+def predict(features):
+    prediction = model.predict(features)
     return prediction[0]
 
-def post_process(pred):
-    return
+# def post_process(pred):
+#     return
 
 @app.route('/predict', methods=['POST'])
 def predict_endpoint():
@@ -32,12 +32,12 @@ def predict_endpoint():
     features = prepare_features(trip)
     pred = predict(features)
     # if we had post-processing it'd go here
-    result = post_process(pred)
+    # result = post_process(pred)
 
     VERSION = os.getenv('VERSION', 'N/A')
 
     result = {
-        'preduction': {
+        'prediction': {
             'duration': pred,
         },
         'version': VERSION
