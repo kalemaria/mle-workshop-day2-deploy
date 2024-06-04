@@ -8,5 +8,7 @@ trip = {
     "trip_distance": 30
 }
 
-response = requests.post(url, json=trip).json()
-print(response)
+response = requests.post(url, json=trip)
+prediction = response.json()
+
+print(prediction)
