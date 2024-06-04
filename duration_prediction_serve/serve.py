@@ -2,7 +2,7 @@ import pickle
 import os
 from flask import Flask, request, jsonify
 
-default_model_file = '../models/model-2022-01.bin'
+default_model_file = 'model.bin'
 MODEL_PATH = os.getenv('MODEL_PATH', default_model_file)
 
 with open(MODEL_PATH, 'rb') as f_in:
