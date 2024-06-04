@@ -1,6 +1,6 @@
 import requests
 
-url = 'http://localhost:9696/predict'
+url = 'http://localhost:9697/predict'
 
 trip = {
     "PULocationID": 100,
